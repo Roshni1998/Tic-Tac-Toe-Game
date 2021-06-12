@@ -1,15 +1,23 @@
 package com.bridgelabz.tictactoe;
+
+import java.util.Scanner;
 /*
  * @roshni
  * Solving the Tic-Tac-Toe Problem
  */
 
 public class TicTacToeGame {
+	
+	Scanner op = new Scanner(System.in);
+	public char player = op.next().charAt(0);
+	public char computer = ' ';
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to TicTacToe Game");
+		System.out.println("Select X or O as your marker");
 		TicTacToeGame game = new TicTacToeGame();
 		game.createTheBoard();
+		game.chooseMarker();
 	}
 
 	/* UC 1 */
@@ -22,4 +30,25 @@ public class TicTacToeGame {
 			System.out.println(board[i]);
 		}
 	}
+	
+	/* UC 2 */
+	// Provide player a choice to choose his marker
+	public void chooseMarker() {
+		// System.out.println("Select X or O as your marker");
+		if (player == 'X') {
+			computer = 'O';
+			System.out.println("Player1 Choice : " + player);
+			System.out.println("Computer Choice : " + computer);
+
+		}
+		else if (player == 'O') {
+			computer = 'X';
+			System.out.println("Player1 Choice : " + player);
+			System.out.println("Computer Choice : " + computer);
+
+		} else {
+			System.out.println("Please Enter valid Choice! ");
+		}
+	}
 }
+
